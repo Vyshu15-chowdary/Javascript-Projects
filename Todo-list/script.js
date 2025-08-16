@@ -2,9 +2,16 @@ const form = document.getElementById("todo-form");
 const taskInput = document.getElementById("task-input");
 const taskList = document.getElementById("task-list");
 
-//array to store tasks
+//localstorage to store tasks
 
-let tasks = [];
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+//save tasks from local storage
+
+function saveTasks(){
+    localStorage.setItem("tasks",JSON.stringyfy(tasks));
+}
+
 
 function storeTasks (){
     taskList.innerHTML = "";
@@ -57,6 +64,7 @@ form.addEventListener("submit",(e)=>{
     if(taskTitle !== ""){
         tasks.push({title:taskTitle,completed:false});
         taskInput.value = "";
+        saveTasks();//save in localstorage
         storeTasks();
     }
 });
@@ -73,6 +81,7 @@ function toggleTask(index){
 
 function deleteTask(index){
     tasks.splice(index,1);
+    saveTasks();
     storeTasks();
 }
 
