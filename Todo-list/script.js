@@ -9,7 +9,7 @@ let tasks = [];
 function storeTasks (){
     taskList.innerHTML = "";
 
-    taskInput.forEach((task,index)=>{
+    tasks.forEach((task,index)=>{
 
         const li = document.createElement("li");
 
@@ -43,12 +43,37 @@ function storeTasks (){
         li.appendChild(deleteBtn);
 
         taskList.appendChild(li);
-
-
-       
-
     
 }  );
 
 }
 
+//add a new task
+
+form.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    const taskTitle = taskInput.value.trim();
+
+    if(taskTitle !== ""){
+        tasks.push({title:taskTitle,completed:false});
+        taskInput.value = "";
+        storeTasks();
+    }
+});
+
+//complete or incomplete
+
+function toggleTask(index){
+    tasks[index].completed =!tasks[index].completed;
+    storeTasks();
+
+}
+
+//deletion of tasks
+
+function deleteTask(index){
+    tasks.splice(index,1);
+    storeTasks();
+}
+
+storeTasks();
