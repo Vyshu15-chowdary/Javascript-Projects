@@ -21,7 +21,7 @@ function storeTasks (){
 
         if(task.completed){
             span.style.textDecoration ="line-through";
-            span.style.color = "gray";
+            span.style.color = "green";
         }
 
         //completion button

@@ -1,0 +1,43 @@
+body{
+    font-family: georgia;
+    font-size: medium;
+    margin-left:350px;
+    
+    margin-top: 50px;
+}
+h1{
+    margin-top: 30px;
+    padding-top: 40px;
+    padding-left: 20px;
+}
+#form {
+
+    background-color: rgb(220, 158, 227);
+    height:300px;
+    width:500px;
+    padding-left: 30px;
+    border-radius: 30px;
+    border-color: rgb(70, 27, 109);
+     
+}
+#task-input{
+
+    height: 50px;
+    width:50%;
+    border-radius: 15px;
+    border-color: rgb(158, 75, 236);
+    font-size: 18px;
+    
+}
+button{
+    width:25%;
+    height:35px;
+    border-radius: 5px;
+    color:rgb(30, 26, 26);
+    background-color: rgb(232, 234, 239);
+}
+button:hover{
+    cursor: pointer;
+}
+
+
